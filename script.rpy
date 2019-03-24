@@ -11,6 +11,8 @@ define g = Character("Girl")
 # The game starts here.
 
 label start:
+    $ day = 0
+    $ time = "";
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -23,6 +25,45 @@ label start:
     # directory.
 
     show eileen happy
+
+    label morning:
+        $ day += 1
+        $ time = "morning"
+        "It's day %(day)d and %(time)s"
+
+        if day == 20:
+            "It's day %(day)d and %(time)s thus its time to go home."
+            return
+
+        jump noon
+
+
+
+    label noon:
+
+        $ time = "noon"
+        "It's day %(day)d and %(time)s"
+        jump afternoon
+
+    label afternoon:
+
+        $ time = "afternoon"
+        "It's day %(day)d and %(time)s"
+        jump evening
+
+    label evening:
+
+        $ time = "evening"
+        "It's day %(day)d and %(time)s"
+        jump night
+
+    label night:
+        $ time = "night"
+        "It's day %(day)d and %(time)s"
+        jump morning
+
+
+
 
     # These display lines of dialogue.
 
@@ -45,7 +86,4 @@ label start:
         g "Go AWAY!!!"
         "Bob walks away"
         return
-
-    # This ends the game.
-
     return
