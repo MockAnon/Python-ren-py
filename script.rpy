@@ -7,6 +7,17 @@ define e = Character("Eileen")
 
 define g = Character("Girl")
 
+init python:
+    class Character(object):
+        bob = 30
+        def properties(self):
+            self.interest = 50
+            self.friendship = 0
+
+        def printMessage(self):
+            "I love cheetos anon"
+
+
 
 # The game starts here.
 
