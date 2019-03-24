@@ -10,18 +10,30 @@ define g = Character("Girl")
 init python:
     class Character(object):
         bob = 30
-        def properties(self):
-            self.interest = 50
-            self.friendship = 0
+        interest = 50
+        friendship = 0
+        # def properties(self):
+        #     self.interest = 50
+        #     self.friendship = 0
 
         def printMessage(self):
-            "I love cheetos anon"
+            return "I love cheetos anon"
+
+
+
+
+
+    def printMessage():
+        "I love cheetos"
 
 
 
 # The game starts here.
 
+
+
 label start:
+    $ obj = Character()
     $ day = 0
     $ time = "";
 
@@ -41,6 +53,9 @@ label start:
         $ day += 1
         $ time = "morning"
         "It's day %(day)d and %(time)s"
+
+        if day == 2:
+            $ obj.printMessage()
 
         if day == 20:
             "It's day %(day)d and %(time)s thus its time to go home."
