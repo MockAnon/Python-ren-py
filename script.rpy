@@ -7,6 +7,9 @@ define e = Character("Eileen")
 
 define g = Character("Girl")
 
+
+
+
 init python:
     class Character(object):
         bob = 30
@@ -16,15 +19,14 @@ init python:
         #     self.interest = 50
         #     self.friendship = 0
 
-        def printMessage(self):
-            return "I love cheetos anon"
+        # $ printMessage(self):
+        #     "I love cheetos anon"
 
 
 
 
 
-    def printMessage():
-        "I love cheetos"
+
 
 
 
@@ -36,6 +38,11 @@ label start:
     $ obj = Character()
     $ day = 0
     $ time = "";
+
+    python:
+        def PrintMessage():
+            return "I love cheetos"
+        # printMessage = PrintMessage()
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -55,7 +62,8 @@ label start:
         "It's day %(day)d and %(time)s"
 
         if day == 2:
-            $ obj.printMessage()
+            printMessage()
+            # "printing this"
 
         if day == 20:
             "It's day %(day)d and %(time)s thus its time to go home."
