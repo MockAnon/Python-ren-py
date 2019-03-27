@@ -13,8 +13,9 @@ define g = Character("Girl")
 
 
 init python:
-    def PrintMessage(this):
-         g(this)
+    def PrintMessage(what, **kwargs):
+         g("bobbiw")
+         e("steve")
 
 
     class Character():
@@ -44,7 +45,7 @@ label start:
     $ obj = Character()
     $ day = 0
     $ time = "";
-    $ PrintMessage = "bob"
+    # $ PrintMessage = "bob"
     # python:
     #     def PrintMessage:
     #         if day == 2:
@@ -72,7 +73,8 @@ label start:
         $ time = "morning"
         "It's day %(day)d and %(time)s"
 
-        # if day == 2:
+        if day == 2:
+            PrintMessage ""
 
         #     "printing this"
 
