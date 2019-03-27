@@ -10,8 +10,14 @@ define g = Character("Girl")
 
 
 
+
+
 init python:
-    class Character(object):
+    def PrintMessage(this):
+         g(this)
+
+
+    class Character():
         bob = 30
         interest = 50
         friendship = 0
@@ -38,11 +44,16 @@ label start:
     $ obj = Character()
     $ day = 0
     $ time = "";
+    $ PrintMessage = "bob"
+    # python:
+    #     def PrintMessage:
+    #         if day == 2:
+    #             "Cheetos"
 
-    python:
-        def PrintMessage():
-            return "I love cheetos"
-        # printMessage = PrintMessage()
+
+    # $ myVar = 10
+    # if myVar == 10:
+    #     <renpy.say(e, "Hello world!")>
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -61,9 +72,9 @@ label start:
         $ time = "morning"
         "It's day %(day)d and %(time)s"
 
-        if day == 2:
-            printMessage()
-            # "printing this"
+        # if day == 2:
+
+        #     "printing this"
 
         if day == 20:
             "It's day %(day)d and %(time)s thus its time to go home."
@@ -74,7 +85,7 @@ label start:
 
 
     label noon:
-
+        g "test"
         $ time = "noon"
         "It's day %(day)d and %(time)s"
         jump afternoon
