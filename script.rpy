@@ -7,6 +7,8 @@ define e = Character("Eileen")
 
 define g = Character("Girl")
 
+define affection = 0
+
 
 
 
@@ -45,16 +47,6 @@ label start:
     $ obj = Character()
     $ day = 0
     $ time = "";
-    # $ PrintMessage = "bob"
-    # python:
-    #     def PrintMessage:
-    #         if day == 2:
-    #             "Cheetos"
-
-
-    # $ myVar = 10
-    # if myVar == 10:
-    #     <renpy.say(e, "Hello world!")>
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -75,12 +67,16 @@ label start:
 
         if day == 2:
             PrintMessage ""
+            $ affection += 1
 
         #     "printing this"
 
         if day == 20:
             "It's day %(day)d and %(time)s thus its time to go home."
             return
+
+        if affection == 1:
+            e "I RUVVV YOUUU"
 
         jump noon
 
