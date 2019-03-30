@@ -1,4 +1,7 @@
-init python:
+init python in day01:
   def lybrary(what, **kwargs):
-    if day == 2:
-      e("another file")
+    e("another file")
+
+  def rink(what, **kwargs):
+    def inception(what, **kwargs):
+        e("inception")

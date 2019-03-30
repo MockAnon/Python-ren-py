@@ -15,6 +15,8 @@ define affection = 0
 
 
 init python:
+    import store.day01 as day01
+
     def PrintMessage(what, **kwargs):
          g("bobbiw")
          e("steve")
@@ -47,6 +49,7 @@ init python:
 
 
 label start:
+    $ lybrary = day01.lybrary()
     $ obj = Character()
     $ day = 0
     $ time = "";
@@ -70,7 +73,7 @@ label start:
 
         if day == 2:
             PrintMessage ""
-            lybrary ""
+            $ lybrary
             $ affection += 1
 
         #     "printing this"
@@ -97,6 +100,8 @@ label start:
         $ time = "afternoon"
         "It's day %(day)d and %(time)s"
         jump evening
+
+        lybrary ""
 
     label evening:
 
