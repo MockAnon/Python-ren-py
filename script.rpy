@@ -15,7 +15,9 @@ define affection = 0
 
 
 init python:
-    import store.day01 as day01
+    # import store.day01 as day01
+    Emily = Emily()
+    Janet = Janet()
 
     def PrintMessage(what, **kwargs):
          g("bobbiw")
@@ -49,10 +51,10 @@ init python:
 
 
 label start:
-    $ lybrary = day01.lybrary()
+    # $ lybrary = day01.lybrary()
     $ obj = Character()
     $ day = 0
-    $ time = "";
+    $ time = ""
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -73,8 +75,12 @@ label start:
 
         if day == 2:
             PrintMessage ""
-            $ lybrary
             $ affection += 1
+            python:
+                Emily.lybrary()
+                Janet.lybrary()
+
+
 
         #     "printing this"
 
@@ -100,8 +106,8 @@ label start:
         $ time = "afternoon"
         "It's day %(day)d and %(time)s"
         jump evening
-
-        lybrary ""
+        # python:
+        #     Emily.lybrary()
 
     label evening:
 

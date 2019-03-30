@@ -1,7 +1,14 @@
-init python in day01:
-  def lybrary(what, **kwargs):
-    e("another file")
+init python:
+  class Emily:
+    def lybrary(what, **kwargs):
+      e("another file-Emily")
 
-  def rink(what, **kwargs):
-    def inception(what, **kwargs):
-        e("inception")
+    def rink(what, **kwargs):
+      e("inception")
+
+  class Janet:
+    def lybrary(what, **kwargs):
+      e("another file -Janet")
+
+    def rink(what, **kwargs):
+      e("inception")
