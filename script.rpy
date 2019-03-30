@@ -18,6 +18,9 @@ init python:
     def PrintMessage(what, **kwargs):
          g("bobbiw")
          e("steve")
+    # def lybrary(what, **kwargs):
+    #     if day == 2:
+    #       e("this file")
 
 
     class Character():
@@ -67,6 +70,7 @@ label start:
 
         if day == 2:
             PrintMessage ""
+            lybrary ""
             $ affection += 1
 
         #     "printing this"
