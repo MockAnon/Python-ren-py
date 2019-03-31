@@ -17,7 +17,7 @@ define affection = 0
 init python:
     # import store.day01 as day01
     Emily = Emily()
-    Janet = Janet()
+    # Janet = Janet()
 
     def PrintMessage(what, **kwargs):
          g("bobbiw")
@@ -78,7 +78,7 @@ label start:
             $ affection += 1
             python:
                 Emily.lybrary()
-                Janet.lybrary()
+                # Janet.lybrary()
 
 
 
@@ -106,7 +106,9 @@ label start:
         $ time = "afternoon"
         "It's day %(day)d and %(time)s"
         python:
-            Emily.addLove(1)
+            # Emily.addLove(1)
+            char_1.addLove(2)
+            char_1.subtractLove(1)
         jump evening
         # python:
         #     Emily.lybrary()
