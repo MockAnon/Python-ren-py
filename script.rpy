@@ -105,6 +105,8 @@ label start:
 
         $ time = "afternoon"
         "It's day %(day)d and %(time)s"
+        python:
+            Emily.addLove(1)
         jump evening
         # python:
         #     Emily.lybrary()
