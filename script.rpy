@@ -122,6 +122,9 @@ label start:
     label night:
         $ time = "night"
         "It's day %(day)d and %(time)s"
+        python:
+            if char_1.like >= 10:
+                e("I LOVE YOU ANON")
         jump morning
 
 
