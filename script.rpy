@@ -39,17 +39,19 @@ init python:
         #     "I love cheetos anon"
 
 
+screen planets: #Preparing the imagemap
+  imagemap:
+    ground "Solar_sys.jpg"
+    hover "Solar_sys.jpg"
+    # ground "planets.jpg"
+    # hover "planets-hover.png"
 
-
-
-
-
-
+    hotspot (62, 399, 90, 91) clicked Jump("mercury")
+    hotspot (227, 302, 141, 137) clicked Jump("venus")
+    hotspot (405, 218, 164, 118) clicked Jump("earth")
+    hotspot (591, 78, 123, 111) clicked Jump("mars")
 
 # The game starts here.
-
-
-
 label start:
     # $ lybrary = day01.lybrary()
     $ obj = Character()
@@ -59,6 +61,28 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+
+    "This is an imagemap tutorial."
+    jump solar_system
+
+    label solar_system:
+        call screen planets #Displaying the imagemap
+
+    label mercury:
+        "It is Mercury."
+        jump solar_system
+
+    label venus:
+        "It is Venus."
+        jump solar_system
+
+    label earth:
+        "It is Earth."
+        jump solar_system
+
+    label mars:
+        "It is Mars."
+        jump solar_system
 
     scene bg room
 
