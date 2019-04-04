@@ -39,17 +39,17 @@ init python:
         #     "I love cheetos anon"
 
 
-screen planets: #Preparing the imagemap
+screen world_map: #Preparing the imagemap
   imagemap:
     ground "Solar_sys.jpg"
     hover "Solar_sys.jpg"
     # ground "planets.jpg"
     # hover "planets-hover.png"
 
-    hotspot (62, 399, 90, 91) clicked Jump("mercury")
-    hotspot (227, 302, 141, 137) clicked Jump("venus")
-    hotspot (405, 218, 164, 118) clicked Jump("earth")
-    hotspot (591, 78, 123, 111) clicked Jump("mars")
+    hotspot (62, 399, 90, 91) clicked Jump("lybrary")
+    hotspot (227, 302, 141, 137) clicked Jump("club")
+    hotspot (405, 218, 164, 118) clicked Jump("boathouse")
+    hotspot (591, 78, 123, 111) clicked Jump("cottage")
 
 # The game starts here.
 label start:
@@ -63,26 +63,26 @@ label start:
     # images directory to show it.
 
     "This is an imagemap tutorial."
-    jump solar_system
+    jump world_map
 
     label solar_system:
         call screen planets #Displaying the imagemap
 
-    label mercury:
-        "It is Mercury."
-        jump solar_system
+    label lybrary:
+        "It is lybrary."
+        jump world_map
 
-    label venus:
-        "It is Venus."
-        jump solar_system
+    label club:
+        "It is club."
+        jump world_map
 
-    label earth:
-        "It is Earth."
-        jump solar_system
+    label boathouse:
+        "It is boathouse."
+        jump world_map
 
-    label mars:
-        "It is Mars."
-        jump solar_system
+    label cottage:
+        "It is cottage."
+        jump world_map
 
     scene bg room
 
