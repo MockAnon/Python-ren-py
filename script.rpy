@@ -19,6 +19,7 @@ init python:
     Emily = Emily()
     # Janet = Janet()
     time = "noon"
+    day = 0
 
     def PrintMessage(what, **kwargs):
          g("bobbiw")
@@ -28,22 +29,27 @@ init python:
     #       e("this file")
 
     def TimeSystem():
-        time = time
+        global time
+        global day
         if time == "noon":
             time = "afternoon"
-            "It's day %(day)d and %(time)s"
+            day += 1
+            g("It's day " + str(day) + " and " + time)
             return time
         if time == "afternoon":
             time = "evening"
-            "It's day %(day)d and %(time)s"
+            day += 1
+            g("It's day " + str(day) + " and " + time)
             return time
         if time == "evening":
             time = "night"
-            "It's day %(day)d and %(time)s"
+            day += 1
+            g("It's day " + str(day) + " and " + time)
             return time
         if time == "night":
             time = "noon"
-            "It's day %(day)d and %(time)s"
+            day += 1
+            g("It's day " + str(day) + " and " + time)
             return time
 
     class Character():
@@ -74,7 +80,7 @@ screen world_map: #Preparing the imagemap
 label start:
     # $ lybrary = day01.lybrary()
     $ obj = Character()
-    $ day = 0
+    # $ day = 0
     # $ time = ""
 
     # Show a background. This uses a placeholder by default, but you can
@@ -120,7 +126,7 @@ label start:
     show eileen happy
 
     label morning:
-        $ day += 1
+        # $ day += 1
         # $ time = "morning"
         "It's day %(day)d and %(time)s"
 
