@@ -18,6 +18,7 @@ init python:
     # import store.day01 as day01
     Emily = Emily()
     # Janet = Janet()
+    time = "noon"
 
     def PrintMessage(what, **kwargs):
          g("bobbiw")
@@ -26,6 +27,24 @@ init python:
     #     if day == 2:
     #       e("this file")
 
+    def TimeSystem():
+        time = time
+        if time == "noon":
+            time = "afternoon"
+            "It's day %(day)d and %(time)s"
+            return time
+        if time == "afternoon":
+            time = "evening"
+            "It's day %(day)d and %(time)s"
+            return time
+        if time == "evening":
+            time = "night"
+            "It's day %(day)d and %(time)s"
+            return time
+        if time == "night":
+            time = "noon"
+            "It's day %(day)d and %(time)s"
+            return time
 
     class Character():
         bob = 30
@@ -56,7 +75,7 @@ label start:
     # $ lybrary = day01.lybrary()
     $ obj = Character()
     $ day = 0
-    $ time = ""
+    # $ time = ""
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -65,23 +84,31 @@ label start:
     "This is an imagemap tutorial."
     jump world_map
 
-    label solar_system:
-        call screen planets #Displaying the imagemap
+    label world_map:
+        call screen world_map #Displaying the imagemap
 
     label lybrary:
         "It is lybrary."
+        python:
+            TimeSystem()
         jump world_map
 
     label club:
         "It is club."
+        python:
+            TimeSystem()
         jump world_map
 
     label boathouse:
         "It is boathouse."
+        python:
+            TimeSystem()
         jump world_map
 
     label cottage:
         "It is cottage."
+        python:
+            TimeSystem()
         jump world_map
 
     scene bg room
@@ -94,7 +121,7 @@ label start:
 
     label morning:
         $ day += 1
-        $ time = "morning"
+        # $ time = "morning"
         "It's day %(day)d and %(time)s"
 
         if day == 2:
