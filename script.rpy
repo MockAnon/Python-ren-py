@@ -63,11 +63,18 @@ init python:
         # $ printMessage(self):
         #     "I love cheetos anon"
 
+screen gui_game_menu():
+     vbox xalign 1.0 yalign 1.0:
+          imagebutton auto idle hover "Icon_01_%s.png" action Jump('lybrary')
+          # imagebutton auto "prefs_%s.png" action ShowMenu('preferences')
+          # imagebutton auto "skip_%s.png" action Skip()
+          # imagebutton auto "afm_%s.png" action Preference("auto-forward mode", "toggle")
+
 
 screen world_map: #Preparing the imagemap
   imagemap:
     ground "Solar_sys.jpg"
-    hover "Solar_sys.jpg"
+    hover "Icon_01_select.png"
     # ground "planets.jpg"
     # hover "planets-hover.png"
 
@@ -88,7 +95,8 @@ label start:
     # images directory to show it.
 
     "This is an imagemap tutorial."
-    jump world_map
+    # jump world_map
+    jump gui_game_menu
 
     label world_map:
         call screen world_map #Displaying the imagemap
