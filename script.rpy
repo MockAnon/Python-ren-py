@@ -64,8 +64,8 @@ init python:
         #     "I love cheetos anon"
 
 screen gui_game_menu():
-     vbox xalign 1.0 yalign 1.0:
-          imagebutton auto idle hover "Icon_01_%s.png" action Jump('lybrary')
+     # vbox xalign 1.0 yalign 1.0:
+          imagebutton auto "Icon_01_%s.png" action ShowMenu('lybrary')
           # imagebutton auto "prefs_%s.png" action ShowMenu('preferences')
           # imagebutton auto "skip_%s.png" action Skip()
           # imagebutton auto "afm_%s.png" action Preference("auto-forward mode", "toggle")
@@ -97,6 +97,9 @@ label start:
     "This is an imagemap tutorial."
     # jump world_map
     jump gui_game_menu
+
+    label gui_game_menu:
+        call screen gui_game_menu
 
     label world_map:
         call screen world_map #Displaying the imagemap
