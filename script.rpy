@@ -65,7 +65,7 @@ init python:
 
 screen gui_game_menu():
      # vbox xalign 1.0 yalign 1.0:
-          imagebutton auto "Icon_01_%s.png" action ShowMenu('lybrary')
+          imagebutton auto  "Icon_01_%s.png" action ShowMenu('lybrary')
           # imagebutton auto "prefs_%s.png" action ShowMenu('preferences')
           # imagebutton auto "skip_%s.png" action Skip()
           # imagebutton auto "afm_%s.png" action Preference("auto-forward mode", "toggle")
@@ -73,15 +73,17 @@ screen gui_game_menu():
 
 screen world_map: #Preparing the imagemap
   imagemap:
-    ground "Solar_sys.jpg"
-    hover "Icon_01_select.png"
+    ground "images/Solar_sys.jpg"
+    hover "images/Icon_01_select.png"
     # ground "planets.jpg"
     # hover "planets-hover.png"
 
-    hotspot (62, 399, 90, 91) clicked Jump("lybrary")
-    hotspot (227, 302, 141, 137) clicked Jump("club")
+    hotspot (62, 399, 0, 91) clicked Jump("lybrary")
+    hotspot (227, 302, 0, 137) clicked Jump("club")
     hotspot (405, 218, 164, 118) clicked Jump("boathouse")
     hotspot (591, 78, 123, 111) clicked Jump("cottage")
+
+    # hotspot (790, 164, 233, 56) action ShowMenu('load') hovered [ Play ("test_two", "sfx/click.wav"), Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_load.png", my_tt_xpos=46, my_tt_ypos=518) ] unhovered [Hide("gui_tooltip")]
 
 # The game starts here.
 label start:
@@ -95,8 +97,8 @@ label start:
     # images directory to show it.
 
     "This is an imagemap tutorial."
-    # jump world_map
-    jump gui_game_menu
+    jump world_map
+    # jump gui_game_menu
 
     label gui_game_menu:
         call screen gui_game_menu
