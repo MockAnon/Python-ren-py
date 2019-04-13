@@ -33,17 +33,14 @@ init python:
         global day
         if time == "noon":
             time = "afternoon"
-            day += 1
             g("It's day " + str(day) + " and " + time)
             return time
         if time == "afternoon":
             time = "evening"
-            day += 1
             g("It's day " + str(day) + " and " + time)
             return time
         if time == "evening":
             time = "night"
-            day += 1
             g("It's day " + str(day) + " and " + time)
             return time
         if time == "night":
@@ -78,13 +75,13 @@ screen world_map: #Preparing the imagemap
     # ground "planets.jpg"
     # hover "planets-hover.png"
 
-    hotspot (62, 399, 0, 91) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")]
+    # hotspot (62, 399, 0, 91) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")]
     # hotspot (227, 302, 0, 137) clicked Jump("club")
     # hotspot (405, 218, 164, 118) clicked Jump("boathouse")
     # hotspot (591, 78, 123, 111) clicked Jump("cottage")
-    hotspot (227, 302, 0, 137) hovered Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_save.png", my_tt_xpos=46, my_tt_ypos=518) unhovered [Hide("gui_tooltip")] clicked Jump("club")
-    hotspot (405, 218, 164, 118) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("club")
-    hotspot (591, 78, 123, 111) hovered Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_save.png", my_tt_xpos=46, my_tt_ypos=518) unhovered [Hide("gui_tooltip")] clicked Jump("club")
+    hotspot (1106, 498, 66, 61) hovered Show("gui_tooltip", my_picture="images/Icon_02.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("club")
+    hotspot (474, 156, 98, 92) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("boathouse")
+    hotspot (1203, 453, 59, 52) hovered Show("gui_tooltip", my_picture="images/Icon_03.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("lybrary")
 
     # hotspot (790, 164, 233, 56) action ShowMenu('load') hovered [ Play ("test_two", "sfx/click.wav"), Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_load.png", my_tt_xpos=46, my_tt_ypos=518) ] unhovered [Hide("gui_tooltip")]
 
