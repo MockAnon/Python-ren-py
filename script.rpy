@@ -78,12 +78,18 @@ screen world_map: #Preparing the imagemap
     # ground "planets.jpg"
     # hover "planets-hover.png"
 
-    hotspot (62, 399, 0, 91) clicked Jump("lybrary")
-    hotspot (227, 302, 0, 137) clicked Jump("club")
-    hotspot (405, 218, 164, 118) clicked Jump("boathouse")
-    hotspot (591, 78, 123, 111) clicked Jump("cottage")
+    hotspot (62, 399, 0, 91) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")]
+    # hotspot (227, 302, 0, 137) clicked Jump("club")
+    # hotspot (405, 218, 164, 118) clicked Jump("boathouse")
+    # hotspot (591, 78, 123, 111) clicked Jump("cottage")
+    hotspot (227, 302, 0, 137) hovered Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_save.png", my_tt_xpos=46, my_tt_ypos=518) unhovered [Hide("gui_tooltip")] clicked Jump("club")
+    hotspot (405, 218, 164, 118) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("club")
+    hotspot (591, 78, 123, 111) hovered Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_save.png", my_tt_xpos=46, my_tt_ypos=518) unhovered [Hide("gui_tooltip")] clicked Jump("club")
 
     # hotspot (790, 164, 233, 56) action ShowMenu('load') hovered [ Play ("test_two", "sfx/click.wav"), Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_load.png", my_tt_xpos=46, my_tt_ypos=518) ] unhovered [Hide("gui_tooltip")]
+
+screen gui_tooltip:
+    add my_picture xpos my_tt_xpos ypos my_tt_ypos
 
 # The game starts here.
 label start:
