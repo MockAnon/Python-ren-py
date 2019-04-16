@@ -5,7 +5,17 @@
 
 define e = Character("Eileen")
 
+define b = Character("Brynn")
+
 define g = Character("Girl")
+
+image bg library = "gui/locations/library.jpg"
+image bg club = "gui/locations/club.jpg"
+image bg boathouse = "gui/locations/boathouse.jpg"
+
+image brynn = "images/characters/brynn.jpeg"
+image ella = "images/characters/ella.jpeg"
+image lissandra = "images/characters/lissandra.jpeg"
 
 define affection = 0
 
@@ -66,6 +76,7 @@ screen gui_game_menu():
           # imagebutton auto "prefs_%s.png" action ShowMenu('preferences')
           # imagebutton auto "skip_%s.png" action Skip()
           # imagebutton auto "afm_%s.png" action Preference("auto-forward mode", "toggle")
+# screen library:
 
 
 screen world_map: #Preparing the imagemap
@@ -110,27 +121,52 @@ label start:
         call screen world_map #Displaying the imagemap
 
     label lybrary:
+        hide screen gui_tooltip
+        show bg library
+        with dissolve
         "It is lybrary."
+
+
         python:
             TimeSystem()
+
+        # renpy.hide_screen
+        window hide dissolve
         jump world_map
 
     label club:
-        "It is club."
-        python:
-            TimeSystem()
-        jump world_map
+      hide screen gui_tooltip
+      show bg club
+      show brynn at right
+      "It is club."
+      b "Hey Anon, do you want me to show you something?"
+      python:
+          TimeSystem()
+      # renpy.hide_screen
+      window hide dissolve
+      jump world_map
 
     label boathouse:
-        "It is boathouse."
-        python:
-            TimeSystem()
-        jump world_map
+      hide screen gui_tooltip
+      show bg boathouse
+      "It is boathouse."
+      show brynn at right
+      b "Awesome"
+      b "this is my friend margret"
+      show ella at left
+      b "woah"
+      hide brynn
+      b "bye bye"
+      python:
+          TimeSystem()
+      b ""
+      jump world_map
 
     label cottage:
         "It is cottage."
         python:
             TimeSystem()
+        window hide dissolve
         jump world_map
 
     scene bg room
