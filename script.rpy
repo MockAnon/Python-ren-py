@@ -157,7 +157,7 @@ label start:
       b "this is my friend margret"
       show ella at left
       b "woah"
-      hide brynn
+      # hide brynn
       b "bye bye"
       python:
           TimeSystem()
