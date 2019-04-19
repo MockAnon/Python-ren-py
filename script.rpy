@@ -29,7 +29,9 @@ init python:
     Emily = Emily()
     # Janet = Janet()
     time = "noon"
-    day = 0
+    day = 1
+    location = ""
+    dayOfWeek = "Sunday"
 
     def PrintMessage(what, **kwargs):
          g("bobbiw")
@@ -38,26 +40,7 @@ init python:
     #     if day == 2:
     #       e("this file")
 
-    def TimeSystem():
-        global time
-        global day
-        if time == "noon":
-            time = "afternoon"
-            g("It's day " + str(day) + " and " + time)
-            return time
-        if time == "afternoon":
-            time = "evening"
-            g("It's day " + str(day) + " and " + time)
-            return time
-        if time == "evening":
-            time = "night"
-            g("It's day " + str(day) + " and " + time)
-            return time
-        if time == "night":
-            time = "noon"
-            day += 1
-            g("It's day " + str(day) + " and " + time)
-            return time
+
 
     class Character():
         bob = 30
@@ -119,57 +102,63 @@ label start:
 
     label world_map:
         call screen world_map #Displaying the imagemap
+        $ location = ""
 
     label lybrary:
         hide screen gui_tooltip
         show bg library
         with dissolve
-        "It is lybrary."
+        $ location = "lybrary"
+        "It is %(location)s"
 
 
         python:
+            eventSystem()
             TimeSystem()
-            hideA()
-
-        # renpy.hide_screen
-        window hide dissolve
+            hideAll()
         jump world_map
 
     label club:
       hide screen gui_tooltip
       show bg club
+      with dissolve
+      $ location = "club"
+      "It is %(location)s"
+
       show brynn at right
       "It is club."
       b "Hey Anon, do you want me to show you something?"
       python:
-          TimeSystem()
-          hideA()
-      # renpy.hide_screen
-      window hide dissolve
+        eventSystem()
+        TimeSystem()
+        hideAll()
       jump world_map
 
     label boathouse:
-      hide screen gui_tooltip
-      show bg boathouse
-      "It is boathouse."
-      show brynn at right
-      b "Awesome"
-      b "this is my friend margret"
-      show ella at left
-      b "woah"
-      # hide brynn
-      b "bye bye"
-      python:
-          TimeSystem()
-          hideA()
-      b ""
-      jump world_map
+        hide screen gui_tooltip
+        show bg boathouse
+        "It is boathouse."
+        show brynn at right
+        b "Awesome"
+        b "this is my friend margret"
+        show ella at left
+        b "woah"
+        # hide brynn
+        b "bye bye"
+        python:
+            eventSystem()
+            TimeSystem()
+            hideAll()
+            renpy.jump('world_map')
+
 
     label cottage:
-        "It is cottage."
+        $ location = "cottage"
+        "It is %(location)s"
         python:
+            eventSystem()
             TimeSystem()
-        window hide dissolve
+            hideAll()
         jump world_map
 
     scene bg room
@@ -196,7 +185,7 @@ label start:
 
         #     "printing this"
 
-        if day == 20:
+        if day == 123:
             "It's day %(day)d and %(time)s thus its time to go home."
             return
 
@@ -210,13 +199,13 @@ label start:
     label noon:
         g "test"
         $ time = "noon"
-        "It's day %(day)d and %(time)s"
+        # "It's day %(day)d and %(time)s"
         jump afternoon
 
     label afternoon:
 
         $ time = "afternoon"
-        "It's day %(day)d and %(time)s"
+        # "It's day %(day)d and %(time)s"
         python:
             # Emily.addLove(1)
             char_1.addLove(2)
@@ -228,12 +217,12 @@ label start:
     label evening:
 
         $ time = "evening"
-        "It's day %(day)d and %(time)s"
+        # "It's day %(day)d and %(time)s"
         jump night
 
     label night:
         $ time = "night"
-        "It's day %(day)d and %(time)s"
+        # "It's day %(day)d and %(time)s"
         python:
             if char_1.like >= 10:
                 e("I LOVE YOU ANON")
