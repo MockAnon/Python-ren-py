@@ -129,6 +129,7 @@ label start:
 
         python:
             TimeSystem()
+            hideA()
 
         # renpy.hide_screen
         window hide dissolve
@@ -142,6 +143,7 @@ label start:
       b "Hey Anon, do you want me to show you something?"
       python:
           TimeSystem()
+          hideA()
       # renpy.hide_screen
       window hide dissolve
       jump world_map
@@ -159,6 +161,7 @@ label start:
       b "bye bye"
       python:
           TimeSystem()
+          hideA()
       b ""
       jump world_map
 
