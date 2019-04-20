@@ -116,6 +116,7 @@ label start:
             eventSystem()
             TimeSystem()
             hideAll()
+        "this returned thus is usable"
         jump world_map
 
     label club:

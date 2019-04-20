@@ -13,5 +13,5 @@ init python:
 
   def eventSystem():
     if day == 1:
-      renpy.say(narrator, "It's day %(day)d this system sorta works")
+      Day01()
 
