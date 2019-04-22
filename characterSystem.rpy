@@ -23,6 +23,23 @@ init python:
       print(out)
       e("You have lost " + str(number) + " and are now at " + out)
 
+  class protagonist:
+    self.faith = 0
+    self.intelligence = 0
+    self.strength = 0
+    self.popularity = 0
+
+    self.weeb = 0
+    self.soy = 0
+    self.girlfriend = []
+
+    def raiseStat(self, type, number):
+      self[type] = self[type] - number
+      out = str(self[type])
+      print(out)
+      e("You have lost " + str(number) + " and are now at " + out)
+
+
 
   char_1 = CharacterObj('Emily', 'Jones', 0, 0)
   char_2 = CharacterObj('Emily', 'Jones', 0, 0)

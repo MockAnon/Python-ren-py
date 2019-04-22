@@ -110,6 +110,7 @@ label start:
         with dissolve
         $ location = "lybrary"
         "It is %(location)s"
+        ""
 
 
         python:
@@ -150,6 +151,7 @@ label start:
             eventSystem()
             TimeSystem()
             hideAll()
+            raiseStat(, "intelligence", 2)
             renpy.jump('world_map')
 
 
