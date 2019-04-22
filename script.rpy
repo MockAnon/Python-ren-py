@@ -41,7 +41,6 @@ init python:
     #       e("this file")
 
 
-
     class Character():
         bob = 30
         interest = 50
@@ -151,7 +150,7 @@ label start:
             eventSystem()
             TimeSystem()
             hideAll()
-            raiseStat(, "intelligence", 2)
+            anon.raiseStat("intelligence", 2)
             renpy.jump('world_map')
 
 

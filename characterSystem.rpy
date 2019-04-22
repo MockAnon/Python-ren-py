@@ -24,23 +24,25 @@ init python:
       e("You have lost " + str(number) + " and are now at " + out)
 
   class protagonist:
-    self.faith = 0
-    self.intelligence = 0
-    self.strength = 0
-    self.popularity = 0
+    def __init__(self):
+      self.faith = 0
+      self.intelligence = 0
+      self.strength = 0
+      self.popularity = 0
 
-    self.weeb = 0
-    self.soy = 0
-    self.girlfriend = []
-
+      self.weeb = 0
+      self.soy = 0
+      self.girlfriend = []
+    @classmethod
     def raiseStat(self, type, number):
+      print(str(number) + type)
       self[type] = self[type] - number
-      out = str(self[type])
+      out = str(type)
       print(out)
-      e("You have lost " + str(number) + " and are now at " + out)
+      # e("You have lost " + str(number) + " and are now at " + out)
 
 
-
+  anon = protagonist()
   char_1 = CharacterObj('Emily', 'Jones', 0, 0)
   char_2 = CharacterObj('Emily', 'Jones', 0, 0)
   # char_1.addLove(1)
