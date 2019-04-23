@@ -33,13 +33,8 @@ init python:
       self.weeb = 0
       self.soy = 0
       self.girlfriend = []
-    @classmethod
     def raiseStat(self, type, number):
-      print(str(number) + type)
-      self[type] = self[type] - number
-      out = str(type)
-      print(out)
-      # e("You have lost " + str(number) + " and are now at " + out)
+      print self[type]
 
 
   anon = protagonist()
