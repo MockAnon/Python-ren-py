@@ -34,7 +34,12 @@ init python:
       self.soy = 0
       self.girlfriend = []
     def raiseStat(self, type, number):
-      print self[type]
+      vars(self)[type] += number
+      output = vars(self)[type]
+      print vars(self)[type]
+      renpy.say(narrator, "You have gained " + str(number) + " " + type + ". You now have " + str(output) + " " + type)
+      return vars(self)[type]
+
 
 
   anon = protagonist()

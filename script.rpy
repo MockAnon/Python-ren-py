@@ -150,7 +150,7 @@ label start:
             eventSystem()
             TimeSystem()
             hideAll()
-            anon.raiseStat("intelligence", 2)
+            anon.raiseStat('intelligence', 2)
             renpy.jump('world_map')
 
 
