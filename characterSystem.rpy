@@ -6,6 +6,9 @@ init python:
       self.last = last
       self.like = like
       self.love = love
+      self.a = 0
+      self.b = 0
+      self.c = 0
 
     def addLove(self, number):
       # like = 0
@@ -23,6 +26,9 @@ init python:
       print(out)
       e("You have lost " + str(number) + " and are now at " + out)
 
+    def aUp(self):
+      self.a = self.a + 1
+
   class protagonist:
     def __init__(self):
       self.faith = 0
@@ -32,7 +38,9 @@ init python:
 
       self.weeb = 0
       self.soy = 0
+      self.endurance = 0
       self.girlfriend = []
+
     def raiseStat(self, type, number):
       vars(self)[type] += number
       output = vars(self)[type]
@@ -45,10 +53,6 @@ init python:
   anon = protagonist()
   char_1 = CharacterObj('Emily', 'Jones', 0, 0)
   char_2 = CharacterObj('Emily', 'Jones', 0, 0)
-  # char_1.addLove(1)
-  # char_1.addLove(1)
-  # char_1.addLove(3)
-  # char_1.subtractLove(2)
 
 
   print(char_1.first)

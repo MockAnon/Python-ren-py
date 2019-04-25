@@ -2,6 +2,10 @@ init python:
   def TimeSystem():
     global time
     global day
+    if time == "morning":
+      time = "noon"
+      # g("It's day " + str(day) + " and " + time)
+      return time
     if time == "noon":
       time = "afternoon"
       # g("It's day " + str(day) + " and " + time)
@@ -15,7 +19,7 @@ init python:
       # g("It's day " + str(day) + " and " + time)
       return time
     if time == "night":
-      time = "noon"
+      time = "morning"
       DayOfWeek()
       day += 1
       # g("It's day " + str(day) + " and " + time)

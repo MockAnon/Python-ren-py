@@ -40,6 +40,15 @@ init python:
     #     if day == 2:
     #       e("this file")
 
+    def eventStandard(type, number):
+        renpy.say(narrator, "%(location)s")
+        eventSystem()
+        TimeSystem()
+        anon.raiseStat(type, number)
+        hideAll()
+        renpy.jump('world_map')
+
+
 
     class Character():
         bob = 30
@@ -83,14 +92,9 @@ screen gui_tooltip:
 
 # The game starts here.
 label start:
-    # $ lybrary = day01.lybrary()
-    $ obj = Character()
-    # $ day = 0
-    # $ time = ""
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    $ obj = Character()
+
 
     "This is an imagemap tutorial."
     jump world_map
@@ -108,50 +112,39 @@ label start:
         show bg library
         with dissolve
         $ location = "lybrary"
-        "It is %(location)s"
-        ""
-
 
         python:
-            eventSystem()
-            TimeSystem()
-            hideAll()
-        "this returned thus is usable"
-        jump world_map
+            eventStandard('intelligence', 2)
 
     label club:
-      hide screen gui_tooltip
-      show bg club
-      with dissolve
-      $ location = "club"
-      "It is %(location)s"
-
-      show brynn at right
-      "It is club."
-      b "Hey Anon, do you want me to show you something?"
-      python:
-        eventSystem()
-        TimeSystem()
-        hideAll()
-      jump world_map
+        hide screen gui_tooltip
+        show bg club
+        with dissolve
+        $ location = "club"
+        python:
+            eventStandard('popularity', 2)
 
     label boathouse:
         hide screen gui_tooltip
         show bg boathouse
-        "It is boathouse."
-        show brynn at right
-        b "Awesome"
-        b "this is my friend margret"
-        show ella at left
-        b "woah"
-        # hide brynn
-        b "bye bye"
+        with dissolve
+        $ location = "boathouse"
         python:
-            eventSystem()
-            TimeSystem()
-            hideAll()
-            anon.raiseStat('intelligence', 2)
-            renpy.jump('world_map')
+            eventStandard('strength', 2)
+
+
+      # show brynn at right
+      # "It is club."
+      # b "Hey Anon, do you want me to show you something?"
+
+
+        # b "Awesome"
+        # b "this is my friend margret"
+        # show ella at left
+        # b "woah"
+        # hide brynn
+        # b "bye bye"
+
 
 
     label cottage:
@@ -161,85 +154,9 @@ label start:
             eventSystem()
             TimeSystem()
             hideAll()
-        jump world_map
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    label morning:
-        # $ day += 1
-        # $ time = "morning"
-        "It's day %(day)d and %(time)s"
-
-        if day == 2:
-            PrintMessage ""
-            $ affection += 1
-            python:
-                Emily.lybrary()
-                # Janet.lybrary()
-
-
-
-        #     "printing this"
-
-        if day == 123:
-            "It's day %(day)d and %(time)s thus its time to go home."
-            return
-
-        if affection == 1:
-            e "I RUVVV YOUUU"
-
-        jump noon
-
-
-
-    label noon:
-        g "test"
-        $ time = "noon"
-        # "It's day %(day)d and %(time)s"
-        jump afternoon
-
-    label afternoon:
-
-        $ time = "afternoon"
-        # "It's day %(day)d and %(time)s"
-        python:
-            # Emily.addLove(1)
-            char_1.addLove(2)
-            char_1.subtractLove(1)
-        jump evening
-        # python:
-        #     Emily.lybrary()
-
-    label evening:
-
-        $ time = "evening"
-        # "It's day %(day)d and %(time)s"
-        jump night
-
-    label night:
-        $ time = "night"
-        # "It's day %(day)d and %(time)s"
-        python:
-            if char_1.like >= 10:
-                e("I LOVE YOU ANON")
-        jump morning
-
-
-
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    g "I don't like you casual"
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+            anon.raiseStat('weeb', 2)
+            anon.raiseStat('endurance', 1)
+            renpy.jump('world_map')
 
     menu:
         "Hey Bob you look nice today!":
