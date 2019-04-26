@@ -15,7 +15,9 @@ init python:
       # g("It's day " + str(day) + " and " + time)
       return time
     if time == "evening":
-      time = "night"
+      time = "morning"
+      DayOfWeek()
+      day += 1
       # g("It's day " + str(day) + " and " + time)
       return time
     if time == "night":

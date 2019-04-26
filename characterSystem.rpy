@@ -28,6 +28,7 @@ init python:
 
     def aUp(self):
       self.a = self.a + 1
+      print(self.a)
 
   class protagonist:
     def __init__(self):
