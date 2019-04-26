@@ -1,5 +1,14 @@
 init python:
-  def Day01():
+  def StandardEvent():
+    BrynnStandard()
+
+
+
+
+
+
+
+  def BrynnStandard():
     if (time == 'noon' or time == 'morning') and (location == 'lybrary'):
       renpy.say(narrator, "It's day %(day)d this system sorta works noon")
       if char_1.a == 0:
