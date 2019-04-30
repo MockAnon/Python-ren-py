@@ -16,6 +16,23 @@ init python:
         renpy.say(narrator, "It's day %(day)d this system sorta works noon 00")
         char_1.addLove(2)
         char_1.aUp()
+        shift = renpy.display_menu([('bump anger', 'bump'), ('calm anger', 'calm')])
+        if shift == 'bump':
+          # do bump stuff
+          renpy.say(narrator, "option 01")
+          question02 = renpy.display_menu([('bump anger', 'bump'), ('calm anger', 'calm')])
+          if question02 == 'bump':
+            renpy.say(narrator, "option 01b")
+          else:
+            renpy.say(narrator, "option 02b")
+        else:
+          renpy.say(narrator, "option 02")
+    # do calm stuff
+        # renpy.display_menu("Hello", "OH MY", interact=True, screen="choice")
+          # "yes":
+          #   char_1.addLove(2)
+          # "No":
+          #   char_1.addLove(2)
         return
       if char_1.a == 1:
         renpy.show("brynn")
