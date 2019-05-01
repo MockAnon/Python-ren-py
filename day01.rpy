@@ -27,18 +27,20 @@ init python:
             renpy.say(narrator, "option 02b")
         else:
           renpy.say(narrator, "option 02")
-    # do calm stuff
-        # renpy.display_menu("Hello", "OH MY", interact=True, screen="choice")
-          # "yes":
-          #   char_1.addLove(2)
-          # "No":
-          #   char_1.addLove(2)
         return
       if char_1.a == 1:
         renpy.show("brynn")
-        renpy.say(narrator, "It's day %(day)d this system sorta works noon 01")
+        renpy.say(b, "It's day %(day)d this system sorta works noon 01. Test")
         char_1.addLove(2)
         char_1.aUp()
+        shift = renpy.display_menu([('bump anger', 'bump'), ('calm anger', 'calm')])
+        if shift == 'bump':
+          # do bump stuff
+          # brynn("option 01")
+          renpy.say(narrator, "option 02")
+        else:
+          renpy.say(narrator, "option 02")
+          # brynn("option 02")
         return
       if char_1.a == 2:
         renpy.show("brynn")
