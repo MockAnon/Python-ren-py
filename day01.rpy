@@ -30,7 +30,9 @@ init python:
         return
       if char_1.a == 1:
         renpy.show("brynn")
-        renpy.say(b, "It's day %(day)d this system sorta works noon 01. Test")
+        renpy.say(b, "Welcome to Dairy Shack, how may I help you?")
+        renpy.say(b, "What Flavour would you like?")
+        renpy.say(b, "Thank you and have a nice day!")
         char_1.addLove(2)
         char_1.aUp()
         shift = renpy.display_menu([('bump anger', 'bump'), ('calm anger', 'calm')])
