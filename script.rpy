@@ -9,6 +9,8 @@ define b = Character("Brynn")
 
 define g = Character("Girl")
 
+define main = Character("Anon")
+
 image bg library = "gui/locations/library.jpg"
 image bg club = "gui/locations/club.jpg"
 image bg boathouse = "gui/locations/boathouse.jpg"
