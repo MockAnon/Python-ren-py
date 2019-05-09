@@ -84,8 +84,9 @@ init python:
           return
         if shift == '01':
           renpy.say(main, "So, two peanuts walk into a bar. One was a salted.")
-          renpy.say(b, "Heh...")
-          renpy.say(b, "I mean... please stop, I'm working")
+          renpy.say(b, "Oh...")
+          if char_1.like == 0:
+            renpy.say(b, "If you're not going to buy anything then please leave.")
           return
         else:
           renpy.say(main, "May I have some icecream?")
