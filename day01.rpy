@@ -62,8 +62,9 @@ init python:
           renpy.say(main, "Tell me if this is funny. Two peanuts walk into a bar. One was a salted.")
           renpy.say(b, "Heh...")
           renpy.say(b, "That's cute.")
-          renpy.say(main, "But, is it funny.")
+          renpy.say(main, "But, is it funny?")
           renpy.say(b, "Yep, thank you and have a nice day!")
+          renpy.say(main, "She, thinks I'm cute.")
           char_1.addLove(1)
           char_1.aUp()
           return
@@ -71,37 +72,70 @@ init python:
         renpy.show("brynn")
         renpy.say(b, "Welcome to Dairy Shack, how may I help you?")
         if char_1.like == 0:
-          renpy.say(b, "You again...")
+          renpy.say(b, "You again...Are you actually going to buy anything this time?")
         else:
           renpy.say(b, "Oh hey, how are you?")
           renpy.say(main, "Great!")
           renpy.say(b, "What would you like?")
         shift = renpy.display_menu([('Buy icecream and leave.', '02'), ('Make cheesy joke and then buy nothing', '01'), ('Buy icecream and then make cheesy joke', '00')])
         if shift == '00':
+
           renpy.say(main, "May I have some icecream?")
           renpy.say(b, "Oh? Sure, that will be $2.50")
+          renpy.say(b, "Here you go, that will be $2.50")
+          renpy.say(main, "Thanks")
+          if char_1.like > 2:
+            renpy.say(b, "No funny jokes today?")
+            renpy.say(main, "If you were a chicken, you'd be impeccable!")
+            renpy.say(b, "Thanks")
           renpy.say(b, "Have a nice day!")
           return
         if shift == '01':
-          renpy.say(main, "So, two peanuts walk into a bar. One was a salted.")
-          renpy.say(b, "Oh...")
+          renpy.say(main, "If you were a chicken, you'd be impeccable!")
+          renpy.say(b, "Oh... heh.")
           if char_1.like == 0:
             renpy.say(b, "If you're not going to buy anything then please leave.")
           return
         else:
           renpy.say(main, "May I have some icecream?")
           renpy.say(b, "Sure, that will be $2.50")
-          renpy.say(main, "Tell me if this is funny. Two peanuts walk into a bar. One was a salted.")
+          renpy.say(main, "Tell me if this is funny. If you were a chicken, you'd be impeccable!")
           renpy.say(b, "Heh...")
           renpy.say(b, "That's cute.")
-          renpy.say(main, "But, is it funny.")
-          renpy.say(b, "Yep, thank you and have a nice day!")
+          if char_1.like > 2:
+            renpy.say(b, "You're pretty funny!")
           char_1.addLove(1)
           char_1.aUp()
         return
       if char_1.a == 3:
         renpy.show("brynn")
-        renpy.say(narrator, "It's day %(day)d this system sorta works noon 03")
+        renpy.say(b, "Welcome to Dairy Shack, how may I help you?")
+        if char_1.like == 0:
+          renpy.say(b, "If you aren't going to buy anything then please leave.")
+        else:
+          renpy.say(b, "Oh hey, how are you?")
+          renpy.say(main, "Great!")
+          renpy.say(b, "What would you like?")
+        shift = renpy.display_menu([('Buy icecream and leave.', '02'), ('Buy icecream and then make cheesy joke', '00')])
+        if shift == '00':
+          renpy.say(main, "May I have some icecream?")
+          renpy.say(b, "Oh? Sure, that will be $2.50")
+          renpy.say(b, "Here you go, that will be $2.50")
+          renpy.say(main, "Thanks")
+          if char_1.like > 2:
+            renpy.say(b, "No funny jokes today?")
+            renpy.say(main, "Tell me if this is funny. If you were a chicken, you'd be impeccable!")
+            renpy.say(b, "Thanks")
+          renpy.say(b, "Have a nice day!")
+          return
+        else:
+          renpy.say(main, "May I have some icecream?")
+          renpy.say(b, "Sure, that will be $2.50")
+          renpy.say(main, "Tell me if this is funny. If you were a chicken, you'd be impeccable!")
+          renpy.say(b, "Heh...")
+          renpy.say(b, "That's cute.")
+          if char_1.like > 2:
+            renpy.say(b, "You're pretty funny!")
         char_1.addLove(2)
         char_1.aUp()
         return
