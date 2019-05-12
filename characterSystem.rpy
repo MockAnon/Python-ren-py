@@ -9,6 +9,7 @@ init python:
       self.a = 0
       self.b = 0
       self.c = 0
+      self.perception = []
 
     def addLove(self, number):
       # like = 0

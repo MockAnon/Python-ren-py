@@ -5,7 +5,7 @@ init python:
       char_1.aUp()
 
   def BrynnStandard():
-    if (time == 'noon' or time == 'morning') and (location == 'lybrary'):
+    if (time == 'noon' or time == 'morning') and (location == 'lybrary') and (day >= 7) and (day <= 20):
       renpy.say(narrator, "It's day %(day)d this system sorta works noon")
       if char_1.a == 0:
         renpy.show("brynn")
