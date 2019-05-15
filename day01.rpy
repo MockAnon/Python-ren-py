@@ -150,7 +150,7 @@ init python:
             renpy.say(b, "Thanks, I'm happy to see you had a change of heart.")
           else:
             renpy.say(narrator, "Gives her $2.50")
-            renpy.say(b, "Thanks for coming!")
+            renpy.say(b, "Thanks for coming! Yay")
           return
         if shift == '01':
           renpy.say(main, "What do you call a group of unorganized cats? A cat-astrophe!")
