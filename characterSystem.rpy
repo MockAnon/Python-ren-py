@@ -51,10 +51,30 @@ init python:
       return vars(self)[type]
 
 
+  class event:
+    def __init__(self):
+      self.count = 0
+      self.a = false
+      self.b = false
+      self.c = false
+
+    def raiseStat(self, type, number):
+      vars(self)[type] += number
+      output = vars(self)[type]
+      print vars(self)[type]
+      renpy.say(narrator, "You have gained " + str(number) + " " + type + ". You now have " + str(output) + " " + type)
+      return vars(self)[type]
+
+    def reverseStat(self, type, number):
+      vars(self)[type] = !self[type]
+
+
 
   anon = protagonist()
   char_1 = CharacterObj('Emily', 'Jones', 0, 0)
   char_2 = CharacterObj('Emily', 'Jones', 0, 0)
+
+  church = event();
 
 
   print(char_1.first)
