@@ -3,6 +3,44 @@ init python:
     if (time == 'noon' or time == 'morning') and (location == 'lybrary'):
       BrynnStandard()
       char_1.aUp()
+      return
+    if (time == 'morning') and (location == 'church'):
+      Church()
+      church.falseStat("a")
+      print(church.raiseStat("count", 1))
+      return
+
+  def Church():
+    if church.a == 0:
+      renpy.say(p, "Church e 01")
+    if church.a == 1:
+      renpy.say(p, "Church e 02")
+    if church.a == 2:
+      renpy.say(p, "Church e 03")
+    if church.a == 3:
+      renpy.say(p, "Church e 04")
+    if church.a == 4:
+      renpy.say(p, "Church e 05")
+    if church.a == 5:
+      renpy.say(p, "Church e 06")
+    if church.a == 6:
+      renpy.say(p, "Church e 07")
+    if church.a == 7:
+      renpy.say(p, "Church e 08")
+    if church.a == 8:
+      renpy.say(p, "Church e 09")
+    if church.a == 9:
+      renpy.say(p, "Church e 10")
+    if church.a == 10:
+      renpy.say(p, "Church e 11")
+    if church.a == 11:
+      renpy.say(p, "Church e 12")
+    if church.a == 12:
+      renpy.say(p, "Church e 13")
+    if church.a == 13:
+      renpy.say(p, "Church e 14")
+
+
 
   def BrynnStandard():
     if (time == 'noon' or time == 'morning') and (location == 'lybrary') and (day >= 7) and (day <= 20):

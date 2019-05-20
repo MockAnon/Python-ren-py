@@ -9,11 +9,16 @@ define b = Character("Brynn")
 
 define g = Character("Girl")
 
+define p = Character("Pastor")
+
 define main = Character("Anon")
 
 image bg library = "gui/locations/library.jpg"
 image bg club = "gui/locations/club.jpg"
 image bg boathouse = "gui/locations/boathouse.jpg"
+image bg church = "gui/locations/boathouse.jpg"
+
+
 
 image brynn = "images/characters/brynn.jpeg"
 image ella = "images/characters/ella.jpeg"
@@ -84,7 +89,9 @@ screen world_map: #Preparing the imagemap
     # hotspot (405, 218, 164, 118) clicked Jump("boathouse")
     # hotspot (591, 78, 123, 111) clicked Jump("cottage")
     hotspot (1106, 498, 66, 61) hovered Show("gui_tooltip", my_picture="images/Icon_02.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("club")
-    hotspot (474, 156, 98, 92) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("boathouse")
+    # hotspot (474, 156, 98, 92) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("boathouse")
+
+    hotspot (474, 156, 98, 92) hovered Show("gui_tooltip", my_picture="images/Icon_01_hover.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("church")
     hotspot (1203, 453, 59, 52) hovered Show("gui_tooltip", my_picture="images/Icon_03.png", my_tt_xpos=0, my_tt_ypos=0) unhovered [Hide("gui_tooltip")] clicked Jump("lybrary")
 
     # hotspot (790, 164, 233, 56) action ShowMenu('load') hovered [ Play ("test_two", "sfx/click.wav"), Show("gui_tooltip", my_picture="gui/tooltip_geme_menu_load.png", my_tt_xpos=46, my_tt_ypos=518) ] unhovered [Hide("gui_tooltip")]
@@ -133,6 +140,16 @@ label start:
         $ location = "boathouse"
         python:
             eventStandard('strength', 2)
+
+    label church:
+        hide screen gui_tooltip
+        show bg church
+        with dissolve
+        $ location = "church"
+        python:
+            eventStandard('spirituality', 2)
+
+
 
 
       # show brynn at right

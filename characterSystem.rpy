@@ -38,6 +38,8 @@ init python:
       self.strength = 0
       self.popularity = 0
 
+      self.spirituality = 0
+
       self.weeb = 0
       self.soy = 0
       self.endurance = 0
@@ -54,20 +56,34 @@ init python:
   class event:
     def __init__(self):
       self.count = 0
-      self.a = false
-      self.b = false
-      self.c = false
+      self.a = False
+      self.b = False
+      self.c = False
 
     def raiseStat(self, type, number):
       vars(self)[type] += number
       output = vars(self)[type]
       print vars(self)[type]
-      renpy.say(narrator, "You have gained " + str(number) + " " + type + ". You now have " + str(output) + " " + type)
+      print "You have gained " + str(number) + " " + type + ". You now have " + str(output) + " " + type
       return vars(self)[type]
 
-    def reverseStat(self, type, number):
-      vars(self)[type] = !self[type]
+    def reverseStat(self, type):
+      if (vars(self)[type] == True) or (vars(self)[type] == False):
+        print vars(self)[type]
+        vars(self)[type] = not vars(self)[type]
+        print "Reverse Stat"
+        print vars(self)[type]
 
+    def falseStat(self, type):
+      print vars(self)[type]
+      vars(self)[type] = False
+      print "Reverse Stat"
+      print vars(self)[type]
+    def trueStat(self, type):
+      print vars(self)[type]
+      vars(self)[type] = False
+      print "Reverse Stat"
+      print vars(self)[type]
 
 
   anon = protagonist()
@@ -77,7 +93,12 @@ init python:
   church = event();
 
 
-  print(char_1.first)
+  # print(char_1.first)
+  # print(church.reverseStat("c"))
+  # print(church.reverseStat("count"))
+  # print(church.raiseStat("count", 1))
+  # print(church.raiseStat("count", 1))
+  # print(church.raiseStat("count", 1))
 
 
 
