@@ -149,6 +149,14 @@ label start:
         python:
             eventStandard('spirituality', 2)
 
+    label ironTemple:
+        hide screen gui_tooltip
+        show bg church
+        with dissolve
+        $ location = "ironTemple"
+        python:
+            eventStandard('spirituality', 2)
+
 
 
 
