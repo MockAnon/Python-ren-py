@@ -157,6 +157,14 @@ label start:
         python:
             eventStandard('spirituality', 2)
 
+    label out:
+        hide screen gui_tooltip
+        show bg church
+        with dissolve
+        $ location = "out"
+        python:
+            eventStandard('spirituality', 2)
+
 
 
 
