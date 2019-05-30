@@ -165,6 +165,8 @@ label start:
         python:
             eventStandard('spirituality', 2)
 
+            eventStandard('spirituality', 2)
+
 
 
 
