@@ -2,30 +2,64 @@ init python:
   def TimeSystem():
     global time
     global day
-    if time == "morning":
+    if location == "homeroom":
+      DayOfWeek()
+      day += 1
+      time = "morning"
+      # g("It's day " + str(day) + " and " + time)
+      return time
+    if location == "period_01":
+      time = "morning"
+      # g("It's day " + str(day) + " and " + time)
+      return time
+    if location == "period_02":
       time = "noon"
       # g("It's day " + str(day) + " and " + time)
       return time
-    if time == "noon":
+    if location == "lunch":
+      time = "noon"
+      # g("It's day " + str(day) + " and " + time)
+      return time
+    if location == "period_03":
       time = "afternoon"
+      # DayOfWeek()
+      # day += 1
       # g("It's day " + str(day) + " and " + time)
       return time
-    if time == "afternoon":
-      time = "evening"
+    if location == "afterschool":
+      time = "afternoon"
+      # DayOfWeek()
+      # day += 1
       # g("It's day " + str(day) + " and " + time)
       return time
-    if time == "evening":
-      time = "morning"
-      DayOfWeek()
-      day += 1
+    if location == "night":
+      time = "night"
       # g("It's day " + str(day) + " and " + time)
       return time
-    if time == "night":
-      time = "morning"
-      DayOfWeek()
-      day += 1
-      # g("It's day " + str(day) + " and " + time)
-      return time
+    # if time == "morning":
+    #   time = "noon"
+    #   # g("It's day " + str(day) + " and " + time)
+    #   return time
+    # if time == "noon":
+    #   time = "afternoon"
+    #   # g("It's day " + str(day) + " and " + time)
+    #   return time
+    # if time == "afternoon":
+    #   time = "evening"
+    #   # g("It's day " + str(day) + " and " + time)
+    #   return time
+    # if time == "evening":
+    #   time = "morning"
+    #   DayOfWeek()
+    #   day += 1
+    #   # g("It's day " + str(day) + " and " + time)
+    #   return time
+    # if time == "night":
+    #   time = "morning"
+    #   DayOfWeek()
+    #   day += 1
+    #   # g("It's day " + str(day) + " and " + time)
+    #   return time
 
   def DayOfWeek():
     global dayOfWeek

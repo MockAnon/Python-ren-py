@@ -51,9 +51,10 @@ init python:
         renpy.say(narrator, "%(location)s")
         eventSystem()
         TimeSystem()
-        anon.raiseStat(type, number)
+        if type != "none":
+            anon.raiseStat(type, number)
         hideAll()
-        renpy.jump('world_map')
+        # renpy.jump('world_map')
 
 
 
@@ -117,7 +118,7 @@ label start:
         with dissolve
         $ location = "homeroom"
         python:
-            eventStandard()
+            eventStandard('none', 0)
         jump period_01
 
     label period_01:
@@ -126,7 +127,7 @@ label start:
         with dissolve
         $ location = "period_01"
         python:
-            eventStandard()
+            eventStandard('intelligence', 1)
         jump period_02
 
     label period_02:
@@ -135,7 +136,7 @@ label start:
         with dissolve
         $ location = "period_02"
         python:
-            eventStandard()
+            eventStandard('popularity', 1)
         jump lunch
 
     label lunch:
@@ -143,7 +144,7 @@ label start:
         with dissolve
         $ location = "lunch"
         python:
-            eventStandard()
+            eventStandard('strength', 1)
         jump period_03
 
     label period_03:
@@ -151,7 +152,7 @@ label start:
         with dissolve
         $ location = "period_03"
         python:
-            eventStandard()
+            eventStandard('spirituality', 1)
         jump afterschool
 
     label afterschool:
@@ -159,16 +160,17 @@ label start:
         with dissolve
         $ location = "afterschool"
         python:
-            eventStandard()
+            eventStandard('spirituality', 1)
         jump night
 
     label night:
         show bg library
         with dissolve
-        # $ location = "lybrary"
+        $ location = "night"
 
         python:
-            eventStandard()
+            eventStandard('none', 1)
+        jump homeroom
 
     label lybrary:
         show bg library
@@ -182,7 +184,7 @@ label start:
     label washroom:
         show bg library
         with dissolve
-        $ location = "lybrary"
+        $ location = "washroom"
 
         python:
             eventStandard()
