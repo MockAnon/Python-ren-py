@@ -12,8 +12,9 @@ init python:
     renpy.say(narrator, "It's day %(day)d, %(dayOfWeek)s and %(time)s")
 
   def eventSystem():
+    renpy.say(narrator, "It's day %(day)d, %(dayOfWeek)s and %(time)s")
     # if day == 1:
     #   Day01()
     #   return
-    StandardEvent()
+    # StandardEvent()
 

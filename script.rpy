@@ -106,56 +106,86 @@ label start:
 
 
     "This is an imagemap tutorial."
-    jump world_map
+
+
+
+    jump homeroom
     # jump gui_game_menu
 
-    label gui_game_menu:
-        call screen gui_game_menu
+    label homeroom:
+        show bg library
+        with dissolve
+        $ location = "homeroom"
+        python:
+            eventStandard()
+        jump period_01
 
-    label world_map:
-        call screen world_map #Displaying the imagemap
-        $ location = ""
+    label period_01:
+        hide screen gui_tooltip
+        show bg church
+        with dissolve
+        $ location = "period_01"
+        python:
+            eventStandard()
+        jump period_02
+
+    label period_02:
+        hide screen gui_tooltip
+        show bg boathouse
+        with dissolve
+        $ location = "period_02"
+        python:
+            eventStandard()
+        jump lunch
+
+    label lunch:
+        show bg club
+        with dissolve
+        $ location = "lunch"
+        python:
+            eventStandard()
+        jump period_03
+
+    label period_03:
+        show bg club
+        with dissolve
+        $ location = "period_03"
+        python:
+            eventStandard()
+        jump afterschool
+
+    label afterschool:
+        show bg club
+        with dissolve
+        $ location = "afterschool"
+        python:
+            eventStandard()
+        jump night
+
+    label night:
+        show bg library
+        with dissolve
+        # $ location = "lybrary"
+
+        python:
+            eventStandard()
 
     label lybrary:
-        hide screen gui_tooltip
         show bg library
         with dissolve
         $ location = "lybrary"
 
         python:
-            eventStandard('intelligence', 2)
+            eventStandard()
 
-    label club:
-        hide screen gui_tooltip
-        show bg club
-        with dissolve
-        $ location = "club"
-        python:
-            eventStandard('popularity', 2)
 
-    label boathouse:
-        hide screen gui_tooltip
-        show bg boathouse
+    label washroom:
+        show bg library
         with dissolve
-        $ location = "boathouse"
-        python:
-            eventStandard('strength', 2)
+        $ location = "lybrary"
 
-    label church:
-        hide screen gui_tooltip
-        show bg church
-        with dissolve
-        $ location = "church"
         python:
-            eventStandard('spirituality', 2)
-
-    label ironTemple:
-        hide screen gui_tooltip
-        show bg church
-        with dissolve
-        $ location = "ironTemple"
-        python:
-            eventStandard('spirituality', 2)
+            eventStandard()
 
     label out:
         hide screen gui_tooltip
@@ -163,9 +193,7 @@ label start:
         with dissolve
         $ location = "out"
         python:
-            eventStandard('spirituality', 2)
-
-            eventStandard('spirituality', 2)
+            eventStandard()
 
 
 
