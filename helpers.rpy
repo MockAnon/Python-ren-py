@@ -13,8 +13,17 @@ init python:
 
   def eventSystem():
     renpy.say(narrator, "It's day %(day)d, %(dayOfWeek)s and %(time)s")
-    # if day == 1:
-    #   Day01()
-    #   return
-    # StandardEvent()
+    if day <= 7:
+      week01()
+      return
+    if day <= 14:
+      week02()
+      return
+    if day <= 14:
+      week03()
+      return
+    if day <= 14:
+      week04()
+      return
+
 
