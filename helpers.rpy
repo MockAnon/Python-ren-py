@@ -19,11 +19,15 @@ init python:
     if day <= 14:
       week02()
       return
-    if day <= 14:
+    if day <= 21:
       week03()
       return
-    if day <= 14:
+    if day <= 27:
       week04()
+      return
+    if day == 28:
+      renpy.say(narrator, "I left the school. sitting there starring up at the sky... holding what was left. These memories, were they ever mine.")
+      renpy.jump("start");
       return
 
 
