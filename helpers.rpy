@@ -1,4 +1,5 @@
 init python:
+  init death = 0;
   def hideAll():
     array = renpy.list_images()
     print array
