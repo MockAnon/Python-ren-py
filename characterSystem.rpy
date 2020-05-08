@@ -90,6 +90,8 @@ init python:
   char_1 = CharacterObj('Emily', 'Jones', 0, 0)
   char_2 = CharacterObj('Emily', 'Jones', 0, 0)
 
+  waifu = CharacterObj('waifu', 'v00', 0, 0)
+
   church = event();
 
 
