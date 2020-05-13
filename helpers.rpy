@@ -17,3 +17,19 @@ init python:
     #   return
     StandardEvent()
 
+    def eventStory():
+        if (location == ""):
+            if (day == 1):
+              Act01()
+              return
+            if (day == 2):
+              Act02()
+              return
+            if (day == 3):
+              Act03()
+              return
+            if (day == 4):
+              Act04()
+              return
+
+

@@ -115,6 +115,9 @@ label start:
     label world_map:
         call screen world_map #Displaying the imagemap
         $ location = ""
+        python:
+            eventStory()
+
 
     label lybrary:
         hide screen gui_tooltip

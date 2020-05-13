@@ -1,5 +1,6 @@
 init python:
   def StandardEvent():
+
     if (time == 'noon' or time == 'morning') and (location == 'lybrary'):
       BrynnStandard()
       char_1.aUp()
